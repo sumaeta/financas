@@ -21,3 +21,15 @@ CREATE TABLE IF NOT EXISTS cliente (
 	ativo BOOLEAN NOT NULL DEFAULT TRUE,
 	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+### Criando a agência 
+
+CREATE TABLE IF NOT EXISTS agencia(
+	banco_numero INTEGER NOT NULL,
+	numero INTEGER NOT NULL,
+	nome VARCHAR(80),
+	ativo BOOLEAN NOT NULL DEFAULT TRUE,
+	datacriacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(banco_numero, numero), 
+	FOREIGN KEY(banco_numero) REFERENCES banco (numero)
+);
