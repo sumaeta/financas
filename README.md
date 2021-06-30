@@ -1,4 +1,4 @@
-# financas
+# finanças
 ## Sobre o projeto
    O projeto tem o objetivo de simular como uma pessoa faria no processo de fazer transação numa agência bancária
 
@@ -12,3 +12,12 @@
 	PRIMARY KEY(numero)
 );
 
+### Criando a tabela Cliente
+
+CREATE TABLE IF NOT EXISTS cliente (
+	numero BIGSERIAL PRIMARY KEY,
+	nome VARCHAR(100) NOT NULL,
+	email VARCHAR(250) NOT NULL,
+	ativo BOOLEAN NOT NULL DEFAULT TRUE,
+	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
